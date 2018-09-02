@@ -1,0 +1,155 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 5.0 Transitional//EN">
+<HTML><HEAD><title>HTML加密產生器</title>
+<META http-equiv=Content-Type content="text/html; charset=big5">
+<style type=text/css>A {
+COLOR: #0066ff; TEXT-DECORATION: none
+}
+A:hover {
+COLOR: #ff6600
+}
+.unnamed1 {
+FONT-SIZE: 9pt; COLOR: #0000ff
+}
+.v {
+FONT-SIZE: 12px; COLOR: #0000ff; FONT-FAMILY: "Verdana"
+}
+</style>
+</HEAD>
+<BODY bgColor=#ffffff>
+<P align=center><FONT face=新細明體 color=#ff0000 size=6><B>HTML加密產生器</B></FONT></P>
+<DIV onmouseover="this.style.left='12px'" 
+style="Z-INDEX: 4; LEFT: 0px; WIDTH: 148px; POSITION: absolute; TOP: 76px; HEIGHT: 20px" 
+onmouseout="this.style.left='0px'">　</DIV>
+  <DIV id=Layer11 
+style="Z-INDEX: 18; LEFT: 155px; WIDTH: 582px; POSITION: absolute; TOP: 57px; HEIGHT: 441px"> 
+    <SCRIPT language=javascript><!--
+
+var i=0;
+var ie=(document.all)?1:0;
+var ns=(document.layers)?1:0;
+
+function initstyleElements() 
+{
+var c = document.pad;
+if (ie)
+{
+//c.text.style.backgroundColor="#DDDDDD";
+c.compileIt.style.backgroundColor="#C0C0A8";
+c.compileIt.style.cursor="hand";
+c.select.style.backgroundColor="#C0C0A8";
+c.select.style.cursor="hand";
+c.view.style.backgroundColor="#C0C0A8";
+c.view.style.cursor="hand";
+c.retur.style.backgroundColor="#C0C0A8";
+c.retur.style.cursor="hand";
+c.clear.style.backgroundColor="#C0C0A8";
+c.clear.style.cursor="hand";
+}
+else return;
+}
+
+function LightOn(what)
+{
+if (ie) what.style.backgroundColor = '#E0E0D0';
+else return;
+}
+function FocusOn(what)
+{
+if (ie) what.style.backgroundColor = '#EBEBEB';
+else return;
+}
+function LightOut(what)
+{
+if (ie) what.style.backgroundColor = '#C0C0A8';
+else return;
+}
+function FocusOff(what)
+{
+if (ie) what.style.backgroundColor = '#DDDDDD';
+else return;
+}
+
+function generate() 
+{
+code = document.pad.text.value;
+if (code)
+{
+document.pad.text.value='加密中....請稍候!';
+setTimeout("compile()",1000);
+}
+else alert('請先輸入欲加密的代碼')
+}
+function compile() /* The "Compilation" */
+{
+document.pad.text.value='';
+compilation=escape(code);
+document.pad.text.value="<script>\n<!--\ndocument.write(unescape(\""+compilation+"\"));\n//-->\n<\/script>";
+i++;
+alert("已經被加密 "+i+" 次!");
+}
+function selectCode() 
+{
+if(document.pad.text.value.length>0)
+{
+document.pad.text.focus();
+document.pad.text.select();
+}
+else alert('沒有可以被複製的內容!')
+}
+function preview() 
+{
+if(document.pad.text.value.length>0)
+{
+pr=window.open("","Preview","scrollbars=1,menubar=1,status=1,width=300,height=320,left=50,top=110");
+pr.document.write(document.pad.text.value);
+}
+else alert('沒有可以被預覽的內容!')
+}
+function uncompile() 
+{
+if (document.pad.text.value.length>0)
+{
+source=unescape(document.pad.text.value);
+document.pad.text.value=""+source+"";
+}
+else alert('你必須先加密後才能取回原本的代碼')
+}
+// --></SCRIPT>
+
+<TABLE class=v cellSpacing=0 cellPadding=0 width="50%" border=0>
+　<TBODY>
+　<TR>
+　　
+        <TD width="100%">&nbsp;</TD>
+      </TR>
+　<TR>
+　　
+        <TD width="100%">　　將網頁代碼複製到以下加密即可</TD>
+      </TR>
+　<TBODY>
+　<TR>
+　　
+        <TD width="100%">
+<form name=pad method=post align="center">
+            <P align=center><TEXTAREA style="BORDER-TOP-style: groove; BORDER-RIGHT-style: groove; BORDER-LEFT-style: groove; BORDER-BOTTOM-style: groove" name=text rows=21 cols=58 100%? WIDTH: ;></TEXTAREA><BR><BR><INPUT class=v onmouseover=LightOn(this) onclick=generate() onmouseout=LightOut(this) type=button value=加密 name=compileIt>　
+　　　　<INPUT class=v onmouseover=LightOn(this) onclick=selectCode() onmouseout=LightOut(this) type=button value=全選 name=select>　　
+<INPUT class=v onmouseover=LightOn(this) onclick=preview() onmouseout=LightOut(this) type=button value=預覽 name=view>　　
+<INPUT class=v onmouseover=LightOn(this) onclick=uncompile() onmouseout=LightOut(this) type=button value=查看源始碼 name=retur>　　
+<INPUT class=v onmouseover=LightOn(this) onmouseout=LightOut(this) type=reset value=清除 name=clear></P></form>
+　　　<DIV></DIV></TR></TBODY></TABLE></DIV></CENTER>
+<center>
+<hr>
+<p><SCRIPT language=JavaScript><!--
+today=new Date();
+y0=today.getFullYear();
+--->
+</SCRIPT>
+<font color=#AAAAAA face="Verdana" size="2">
+Copyright 
+<SCRIPT language=JavaScript>
+<!---
+document.write(y0);
+---></SCRIPT>lincat web</font></p>
+</center>
+</BODY></HTML>
